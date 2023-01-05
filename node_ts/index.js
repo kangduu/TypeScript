@@ -1,16 +1,18 @@
 "use strict";
-var Point1 = /** @class */ (function () {
-    function Point1() {
-        this.x = 0;
-        this.y = 0;
+Object.defineProperty(exports, "__esModule", { value: true });
+var A = /** @class */ (function () {
+    function A() {
+        this._length = 0;
     }
-    return Point1;
+    Object.defineProperty(A.prototype, "length", {
+        get: function () {
+            return this._length;
+        },
+        set: function (value) {
+            this._length = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return A;
 }());
-var Point2 = /** @class */ (function () {
-    function Point2() {
-        this.x = 0;
-        this.y = 0;
-    }
-    return Point2;
-}());
-var p = new Point2();

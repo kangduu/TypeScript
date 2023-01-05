@@ -1,10 +1,10 @@
-class Point1 {
-	x = 0;
-	y = 0;
+class A {
+	_length = 0;
+	get length() {
+		return this._length;
+	}
+	set length(value: number) {
+		this._length = value;
+	}
 }
-class Point2 {
-	x = 0;
-	y = 0;
-}
-
-const p: Point1 = new Point2();
+export {};
