@@ -1,10 +1,23 @@
-class A {
-	_length = 0;
-	get length() {
-		return this._length;
-	}
-	set length(value: number) {
-		this._length = value;
+interface Animal {
+	dateOfBirth: any;
+}
+
+interface Dog extends Animal {
+	breed: any;
+}
+
+class AnimalHouse {
+	resident: Animal;
+	constructor(animal: Animal) {
+		this.resident = animal;
 	}
 }
+
+class DogHouse extends AnimalHouse {
+	resident: Dog;
+	constructor(dog: Dog) {
+		super(dog);
+	}
+}
+
 export {};
