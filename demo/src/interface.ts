@@ -1,41 +1,39 @@
 /**
- * @name interface 接口 
+ * @name interface 接口
  */
 
 interface User {
-    readonly name: string;
-    value: number;
-    age?: number;
-    [propName: string]: any;
+	readonly name: string;
+	value: number;
+	age?: number;
+	[propName: string]: any;
 }
 
 const user: User = {
-    name: "duk",
-    value: 1000,
-    ages: 100
-}
+	name: 'duk',
+	value: 1000,
+	ages: 100,
+};
 
-user.age = 6
+user.age = 6;
 user.running = (): void => {
-    console.log('running...');
-}
+	console.log('running...');
+};
 
 function showUser(target: User): void {
-    console.log(target);
-    target.running()
+	console.log(target);
+	target.running();
 }
 
-showUser(user)
-
-
+showUser(user);
 
 interface List {
-    [index: number]: any;
-    length: number;
-    max?: number;
+	[index: number]: any;
+	length: number;
+	max?: number;
 }
 
-const count: List = [1, 2, 3, 4]
+const count: List = [1, 2, 3, 4];
 
 console.log(count.length);
 
@@ -47,55 +45,50 @@ console.log(count.length);
 // ro.length = 100; // error!
 // a = ro as number[]; // error!
 
-
 interface Book {
-    name: string;
-    price?: number;
-    [propName: string]: any;
-    [index: number]: string
+	name: string;
+	price?: number;
+	[propName: string]: any;
+	[index: number]: string;
 }
 
 const book: Book = {
-    name: "java",
-    desc: "this is book"
-}
+	name: 'java',
+	desc: 'this is book',
+};
 
 function viewBook(book: Book): void {
-    console.log('book:', book);
-
+	console.log('book:', book);
 }
-viewBook(book)
+viewBook(book);
 
-viewBook({ name: "css", opacity: 0.2 } as Book)
-
-
+viewBook({ name: 'css', opacity: 0.2 } as Book);
 
 interface Func {
-    (props?: object, state?: object): boolean
+	(props?: object, state?: object): boolean;
 }
 
 let fn: Func = function (p, s) {
-    console.log(p, s);
-    return false
-}
+	console.log(p, s);
+	return false;
+};
 
-fn()
+fn();
 
 const f = <Func>function () {
-    console.log(333);
-    
-    // return false
-}
-f()
+	console.log(333);
 
+	// return false
+};
+f();
 
 interface ClockInterface {
-    currentTime: Date
+	currentTime: Date;
 }
 
 class Clock implements ClockInterface {
-    currentTime: Date
-    constructor() {
-
-    }
+	currentTime: Date;
+	constructor() {}
 }
+
+export {};
